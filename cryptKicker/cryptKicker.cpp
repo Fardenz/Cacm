@@ -97,7 +97,8 @@ void processCase(string frase, map<int, vector<string>> possibleWords)
                     {
                         //worng dict
                         isWrong = true;
-                        pw++;
+                        tempDict = dict;
+                        break;
                     }
                 }
             }
@@ -106,17 +107,21 @@ void processCase(string frase, map<int, vector<string>> possibleWords)
             {
                 //merge maps
                 dict.insert(tempDict.begin(), tempDict.end());
+                break;
+            }
+            else
+            {
+                pw++;
             }
         }
-
-        string res = canDecrypt(words, dict);
-        if (res == controlString)
-        {
-            //cant decrypt
-            res = transformToAsterisk(words);
-        }
-        cout << res << "\n";
     }
+    string res = canDecrypt(words, dict);
+    if (res == controlString)
+    {
+        //cant decrypt
+        res = transformToAsterisk(words);
+    }
+    cout << res << "\n";
 }
 int main(int argc, char const *argv[])
 {
@@ -142,7 +147,8 @@ int main(int argc, char const *argv[])
     while (cin)
     {
         getline(cin, s);
-        processCase(s, possibleWords);
+        if (s != "")
+            processCase(s, possibleWords);
     }
 
     return 0;
