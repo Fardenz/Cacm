@@ -26,10 +26,10 @@ const vector<string> split(const string &s, const char &c)
 
     return v;
 }
-/* bool straightFlush(std::map<char, int> sw, std::map<char, int> vw, std::map<char, int> sb, std::map<char, int> vb)
+bool straightFlush(std::map<char, int> sw, std::map<char, int> vw, std::map<char, int> sb, std::map<char, int> vb)
 {
 }
-bool fourOfKind(std::map<char, int> sw, std::map<char, int> vw, std::map<char, int> sb, std::map<char, int> vb)
+/*bool fourOfKind(std::map<char, int> sw, std::map<char, int> vw, std::map<char, int> sb, std::map<char, int> vb)
 {
     bool white = false, black = false;
 
@@ -49,10 +49,10 @@ bool fourOfKind(std::map<char, int> sw, std::map<char, int> vw, std::map<char, i
     if (black && white)
     {
     }
-}
+}*/
 bool straightFlush2(std::map<char, int> sw, std::map<char, int> vw, std::map<char, int> sb, std::map<char, int> vb)
 {
-} */
+}
 int getWinner(vector<string> white, vector<string> black)
 {
     std::map<char, int> suitW;
@@ -69,7 +69,7 @@ int getWinner(vector<string> white, vector<string> black)
         suitB[black[i].at(1)];
     }
 
-   /*  int res = straightFlush(suitW, valueW, suitB, valueW);
+    /*  int res = straightFlush(suitW, valueW, suitB, valueW);
     if (res > -1)
     {
     } */
